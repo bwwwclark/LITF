@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ladner in the Fire Designs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), 
+                        url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800"%3E%3Cdefs%3E%3CradialGradient id="grad1" cx="30%25" cy="30%25" r="70%25"%3E%3Cstop offset="0%25" style="stop-color:%23ff6b35;stop-opacity:0.8" /%3E%3Cstop offset="50%25" style="stop-color:%23ffd23f;stop-opacity:0.6" /%3E%3Cstop offset="100%25" style="stop-color:%2306d6a0;stop-opacity:0.4" /%3E%3C/radialGradient%3E%3CradialGradient id="grad2" cx="70%25" cy="70%25" r="60%25"%3E%3Cstop offset="0%25" style="stop-color:%2306d6a0;stop-opacity:0.7" /%3E%3Cstop offset="50%25" style="stop-color:%23ff6b35;stop-opacity:0.5" /%3E%3Cstop offset="100%25" style="stop-color:%23ffd23f;stop-opacity:0.3" /%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width="1400" height="800" fill="%23000"/%3E%3Ccircle cx="400" cy="200" r="300" fill="url(%23grad1)"/%3E%3Ccircle cx="1000" cy="600" r="250" fill="url(%23grad2)"/%3E%3Cg opacity="0.6"%3E%3Cpath d="M600,300 Q700,250 800,300 Q850,350 800,400 Q700,450 600,400 Q550,350 600,300 Z" fill="%23ff6b35"/%3E%3C/g%3E%3Cg opacity="0.4"%3E%3Cpath d="M200,500 Q350,450 500,500 Q550,550 500,600 Q350,650 200,600 Q150,550 200,500 Z" fill="%23ffd23f"/%3E%3C/g%3E%3C/svg%3E');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ff6b35, #ffd23f, #06d6a0);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease-in-out infinite;
+            line-height: 1.2;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            color: #cccccc;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .skill-tag {
+            font-family: 'Montserrat', sans-serif;
+            background: rgba(255, 107, 53, 0.1);
+            border: 1px solid #ff6b35;
+            color: #ff6b35;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: #ff6b35;
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 6rem 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .section-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 6rem;
+            font-weight: 900;
+            color: #ff6b35;
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .section-description {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: #aaaaaa;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-item {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            border-color: #ff6b35;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
+        }
+
+        .service-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #ff6b35;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Portfolio Grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .portfolio-item:hover {
+            border-color: #06d6a0;
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(6, 214, 160, 0.2);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-image {
+            transform: scale(1.05);
+        }
+
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+
+        .portfolio-category {
+            color: #06d6a0;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-title {
+            font-family: 'Montserrat', sans-serif;
+            color: #ffffff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-description {
+            color: #aaaaaa;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #0f0f0f;
+            padding: 6rem 0;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            background: #1a1a1a;
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            font-family: 'Montserrat', sans-serif;
+            display: block;
+            color: #ff6b35;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: #0a0a0a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff6b35;
+            box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            font-family: 'Montserrat', sans-serif;
+            width: 100%;
+            background: linear-gradient(135deg, #ff6b35, #ffd23f);
+            color: #000;
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            font-family: 'Montserrat', sans-serif;
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b35, #ffd23f);
+            color: #000;
+            padding: 0.8rem 1.8rem;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 2rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .section-number {
+                font-size: 4rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-list {
+                justify-content: center;
+            }
+            
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Ladner in the Fire Designs</h1>
+                <p class="hero-subtitle">Creative designer with 5+ years of experience. I use bold visuals and innovative concepts to ensure designs fulfill customer, user, and client needs.</p>
+                
+                <div class="skills-list">
+                    <span class="skill-tag">Logo Design</span>
+                    <span class="skill-tag">T-Shirt Design</span>
+                    <span class="skill-tag">Web Design</span>
+                    <span class="skill-tag">Branding</span>
+                    <span class="skill-tag">Print Design</span>
+                    <span class="skill-tag">UI/UX</span>
+                </div>
+                
+                <a href="#contact" class="cta-btn">Let's Work Together</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-number">01</div>
+            <h2 class="section-title">Corporate Identity & Branding</h2>
+            <p class="section-description">Professional brand identities that make lasting impressions. From healthcare to consulting, I create cohesive visual systems that capture your company's essence and connect with your audience.</p>
+            
+            <div class="services-grid">
+                <div class="service-item">
+                    <h4>Logo Design</h4>
+                    <p>Custom logos that embody your brand's personality and values</p>
+                </div>
+                <div class="service-item">
+                    <h4>Brand Guidelines</h4>
+                    <p>Comprehensive style guides for consistent brand application</p>
+                </div>
+                <div class="service-item">
+                    <h4>Business Cards</h4>
+                    <p>Professional print materials that leave lasting impressions</p>
+                </div>
+                <div class="service-item">
+                    <h4>Marketing Materials</h4>
+                    <p>Brochures, flyers, and promotional designs that convert</p>
+                </div>
+            </div>
+            
+            <a href="#contact" class="cta-btn">Start Your Brand Project</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-number">02</div>
+            <h2 class="section-title">Apparel & T-Shirt Design</h2>
+            <p class="section-description">Eye-catching apparel graphics that stand out from the crowd. Whether it's quirky food puns, bold cycling themes, or event merchandise, I bring personality and impact to wearables.</p>
+            
+            <div class="services-grid">
+                <div class="service-item">
+                    <h4>Event T-Shirts</h4>
+                    <p>Memorable designs for cycling events, festivals, and gatherings</p>
+                </div>
+                <div class="service-item">
+                    <h4>Brand Merchandise</h4>
+                    <p>Custom apparel that promotes your brand with style</p>
+                </div>
+                <div class="service-item">
+                    <h4>Novelty Designs</h4>
+                    <p>Fun, creative graphics that spark conversation</p>
+                </div>
+                <div class="service-item">
+                    <h4>Sports Apparel</h4>
+                    <p>Performance wear designs that motivate and inspire</p>
+                </div>
+            </div>
+            
+            <a href="#contact" class="cta-btn">Design Custom Apparel</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-number">03</div>
+            <h2 class="section-title">Web Design & Digital</h2>
+            <p class="section-description">Modern, responsive web designs that engage and convert. From real estate to small business, I craft digital experiences that work beautifully across all devices and drive results.</p>
+            
+            <div class="services-grid">
+                <div class="service-item">
+                    <h4>Website Design</h4>
+                    <p>Custom websites built for your specific business needs</p>
+                </div>
+                <div class="service-item">
+                    <h4>UI/UX Design</h4>
+                    <p>User-centered interfaces that enhance engagement</p>
+                </div>
+                <div class="service-item">
+                    <h4>E-commerce</h4>
+                    <p>Online stores that maximize conversions and sales</p>
+                </div>
+                <div class="service-item">
+                    <h4>Digital Marketing</h4>
+                    <p>Social media graphics and digital advertising materials</p>
+                </div>
+            </div>
+            
+            <a href="#contact" class="cta-btn">Build Your Website</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-number">04</div>
+            <h2 class="section-title">Featured Work</h2>
+            <p class="section-description">A showcase of recent projects spanning corporate identity, apparel design, and web development. Each piece was crafted with attention to detail and strategic thinking.</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="/ACOMACs.png' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23ff6b35'/%3E%3Cg fill='%23ffd23f'%3E%3Cpath d='M50,50 Q200,20 350,50 Q350,200 200,230 Q50,200 50,50 Z' opacity='0.8'/%3E%3C/g%3E%3Ctext x='200' y='120' text-anchor='middle' dy='.3em' fill='white' font-size='18' font-weight='bold'%3EA COURT%3C/text%3E%3Ctext x='200' y='145' text-anchor='middle' dy='.3em' fill='white' font-size='14'%3EOF%3C/text%3E%3Ctext x='200' y='170' text-anchor='middle' dy='.3em' fill='white' font-size='18' font-weight='bold'%3EMACS AND CHEESES%3C/text%3E%3C/svg%3E" alt="A Court of Macs and Cheeses Logo" class="portfolio-image">
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Logo Design</div>
+                        <h3 class="portfolio-title">A Court of Macs and Cheeses</h3>
+                        <p class="portfolio-description">Playful food brand logo with melting cheese typography effect and vibrant color palette</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="RAFinity-logo.png' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23e8f4fd'/%3E%3Cpath d='M150,100 Q200,80 250,100 Q270,125 250,150 Q200,170 150,150 Q130,125 150,100 Z' fill='%232196f3' opacity='0.2'/%3E%3Cpath d='M160,110 Q200,90 240,110 L240,140 Q200,160 160,140 Z' fill='%232196f3'/%3E%3Cpath d='M180,120 Q200,115 220,120 Q220,130 200,135 Q180,130 180,120 Z' fill='white'/%3E%3Ctext x='200' y='190' text-anchor='middle' fill='%232196f3' font-size='18' font-weight='bold'%3ERAFinity%3C/text%3E%3C/svg%3E" alt="RAFinity Logo" class="portfolio-image">
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Healthcare Branding</div>
+                        <h3 class="portfolio-title">RAFinity</h3>
+                        <p class="portfolio-description">Clean medical logo incorporating stethoscope and infinity symbol for healthcare technology company</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="LITF-jersey.jpg' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23ff6b35'/%3E%3Cg fill='%23ffd23f' opacity='0.6'%3E%3Ccircle cx='100' cy='60' r='30'/%3E%3Ccircle cx='300' cy='180' r='40'/%3E%3C/g%3E%3Cg fill='%2306d6a0' opacity='0.4'%3E%3Ccircle cx='320' cy='70' r='25'/%3E%3Ccircle cx='80' cy='190' r='35'/%3E%3C/g%3E%3Ctext x='200' y='100' text-anchor='middle' fill='white' font-size='24' font-weight='bold'%3ELADNER%3C/text%3E%3Ctext x='200' y='125' text-anchor='middle' fill='white' font-size='16'%3EIN THE%3C/text%3E%3Ctext x='200' y='155' text-anchor='middle' fill='white' font-size='24' font-weight='bold'%3EFIRE%3C/text%3E%3Ctext x='200' y='190' text-anchor='middle' fill='white' font-size='12'%3ERAGBRAI 2025%3C/text%3E%3C/svg%3E" alt="Ladner in the Fire T-shirt" class="portfolio-image">
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Event Apparel</div>
+                        <h3 class="portfolio-title">Ladner in the Fire</h3>
+                        <p class="portfolio-description">Bold cycling event t-shirt featuring skeleton rider and flame graphics for RAGBRAI 2025</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="TM-site.png' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23f0f0f0'/%3E%3Crect x='20' y='20' width='360' height='30' fill='%23001f3f'/%3E%3Crect x='30' y='70' width='160' height='100' fill='%23ddd'/%3E%3Crect x='210' y='70' width='160' height='100' fill='%23ddd'/%3E%3Crect x='30' y='190' width='340' height='40' fill='%23001f3f'/%3E%3Ctext x='200' y='40' text-anchor='middle' fill='white' font-size='12'%3ETodd Miller Realty%3C/text%3E%3Ctext x='110' y='125' text-anchor='middle' fill='%23666' font-size='10'%3EProperty 1%3C/text%3E%3Ctext x='290' y='125' text-anchor='middle' fill='%23666' font-size='10'%3EProperty 2%3C/text%3E%3C/svg%3E" alt="Todd Miller Realty Website" class="portfolio-image">
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Web Design</div>
+                        <h3 class="portfolio-title">Todd Miller Realty</h3>
+                        <p class="portfolio-description">Professional real estate website with property management focus and clean, modern interface</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="Wayfinder-logo.png" width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23e3f2fd'/%3E%3Ccircle cx='200' cy='125' r='80' fill='white' stroke='%23004d6b' stroke-width='3'/%3E%3Cpath d='M160,100 Q180,80 200,100 Q220,80 240,100 Q240,140 220,160 Q200,180 180,160 Q160,140 160,100 Z' fill='%23004d6b'/%3E%3Cpath d='M170,130 Q190,120 210,130 Q220,140 210,150 Q190,160 170,150 Q160,140 170,130 Z' fill='%236bb6ff' opacity='0.7'/%3E%3Cpolygon points='195,90 205,90 200,85' fill='%23ffd23f'/%3E%3Cpolygon points='210,95 218,95 214,90' fill='%23ffd23f'/%3E%3Ctext x='200' y='200' text-anchor='middle' fill='%23004d6b' font-size='14' font-weight='bold'%3EWAYFINDER CONSULTING%3C/text%3E%3C/svg%3E" alt="Wayfinder Consulting Logo" class="portfolio-image">
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Consulting Brand</div>
+                        <h3 class="portfolio-title">Wayfinder Consulting</h3>
+                        <p class="portfolio-description">Nautical-themed consulting logo with boat and compass elements symbolizing guidance and direction</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="Gossamer-logo.png' width='400' height='250' viewBox='0 0 400 250'%3E%3Crect width='400' height='250' fill='%23f9f9f9'/%3E%3Ccircle cx='200' cy='100' r='40' fill='%23333' stroke='%23666' stroke-width='2'/%3E%3Cellipse cx='200' cy='140' rx='30' ry='50' fill='%23333'/%3E%3Cpath d='M170,90 Q150,70 130,90 M170,110 Q150,130 130,110 M230,90 Q250,70 270,90 M230,110 Q250,130 270,110 M180,160 Q160,180 140,160 M220,160 Q240,180 260,160' stroke='%23333' stroke-width='3' fill='none'/%3E%3Ccircle cx='190' cy='95' r='3' fill='white'/%3E%3Ccircle cx='210' cy='95' r='3' fill='white'/%3E%3Cpath d='M190,105 Q200,115 210,105' stroke='white' stroke-width='2' fill='none'/%3E%3Ctext x='200' y='200' text-anchor='middle' fill='%23333' font-size='16' font-weight='bold'%3EGossamer Designs%3C/text%3E%3C/svg%3E" alt="Gossamer Designs Logo" class="portfolio-image">
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Creative Branding</div>
+                        <h3 class="portfolio-title">Gossamer Designs</h3>
+                        <p class="portfolio-description">Charming spider mascot logo with coffee theme, blending whimsy with professional appeal</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#contact" class="cta-btn">Discuss Your Project</a>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-number">05</div>
+            <h2 class="section-title">Let's Create Something Amazing</h2>
+            <p class="section-description">Ready to bring your vision to life? I'd love to hear about your project and discuss how we can work together to create impactful design solutions.</p>
+            
+            <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Project Type</label>
+                    <input type="text" id="subject" name="subject" placeholder="Logo Design, Website, T-Shirt Design, etc." required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Project Details</label>
+                    <textarea id="message" name="message" placeholder="Tell me about your project, timeline, and any specific requirements..." required></textarea>
+                </div>
+                
+                <input type="hidden" name="_to" value="bwwwclark@gmail.com">
+                <input type="hidden" name="_subject" value="New project inquiry from Ladner in the Fire Designs">
+                <input type="hidden" name="_next" value="thank-you.html">
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling and interaction effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for CTA links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Parallax effect for hero background
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.hero');
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            });
+
+            // Form submission feedback
+            document.querySelector('.contact-form').addEventListener('submit', function(e) {
+                const button = this.querySelector('.submit-btn');
+                button.textContent = 'Sending...';
+                button.style.opacity = '0.7';
+            });
+
+            // Skill tags hover effect
+            document.querySelectorAll('.skill-tag').forEach(tag => {
+                tag.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px) scale(1.05)';
+                });
+                tag.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
