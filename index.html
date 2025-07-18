@@ -121,47 +121,6 @@
             color: #ffffff;
         }
 
-        .section-description {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.1rem;
-            color: #aaaaaa;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            line-height: 1.8;
-            font-weight: 400;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .service-item {
-            background: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .service-item:hover {
-            border-color: #ff6b35;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
-        }
-
-        .service-item h4 {
-            font-family: 'Montserrat', sans-serif;
-            color: #ff6b35;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
         /* Portfolio Grid */
         .portfolio-grid {
             display: grid;
@@ -177,6 +136,7 @@
             overflow: hidden;
             transition: all 0.3s ease;
             position: relative;
+            cursor: pointer;
         }
 
         .portfolio-item:hover {
@@ -216,10 +176,78 @@
             margin-bottom: 0.5rem;
         }
 
-        .portfolio-description {
-            color: #aaaaaa;
-            font-size: 0.95rem;
-            line-height: 1.6;
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.3s ease;
+            overflow: auto;
+        }
+
+        .lightbox.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 50vw;
+            max-height: none;
+            margin: auto;
+            animation: scaleIn 0.3s ease;
+            min-height: 200px;
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .lightbox-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            font-size: 2rem;
+            color: #ffffff;
+            background: rgba(255, 107, 53, 0.2);
+            border: 2px solid #ff6b35;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .lightbox-close:hover {
+            background: #ff6b35;
+            color: #000;
+            transform: scale(1.1);
         }
 
         /* Contact Section */
@@ -353,6 +381,23 @@
             .portfolio-grid {
                 grid-template-columns: 1fr;
             }
+
+            .lightbox.show {
+                padding: 1rem;
+            }
+
+            .lightbox-content {
+                max-width: 70vw;
+                max-height: none;
+            }
+
+            .lightbox-close {
+                top: -40px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -362,6 +407,11 @@
             
             .hero h1 {
                 font-size: 2.5rem;
+            }
+
+            .lightbox-content {
+                max-width: 95vw;
+                max-height: 85vh;
             }
         }
     </style>
@@ -389,82 +439,10 @@
     <section class="section">
         <div class="container">
             <div class="section-number">01</div>
-            <h2 class="section-title">Corporate Identity & Branding</h2>
-            
-            <div class="services-grid">
-                <div class="service-item">
-                    <h4>Logo Design</h4>
-                </div>
-                <div class="service-item">
-                    <h4>Brand Guidelines</h4>
-                </div>
-                <div class="service-item">
-                    <h4>Business Cards</h4>
-                </div>
-                <div class="service-item">
-                    <h4>Marketing Materials</h4>
-                </div>
-            </div>
-            
-            <a href="#contact" class="cta-btn">Start Your Brand Project</a>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div class="section-number">02</div>
-            <h2 class="section-title">Apparel & T-Shirt Design</h2>
-            
-            <div class="services-grid">
-                <div class="service-item">
-                    <h4>Event T-Shirts</h4>
-                </div>
-                <div class="service-item">
-                    <h4>Brand Merchandise</h4>
-                </div>
-                <div class="service-item">
-                    <h4>Novelty Designs</h4>
-                </div>
-                <div class="service-item">
-                    <h4>Sports Apparel</h4>
-                </div>
-            </div>
-            
-            <a href="#contact" class="cta-btn">Design Custom Apparel</a>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div class="section-number">03</div>
-            <h2 class="section-title">Web Design & Digital</h2>
-            
-            <div class="services-grid">
-                <div class="service-item">
-                    <h4>Website Design</h4>
-                </div>
-                <div class="service-item">
-                    <h4>UI/UX Design</h4>
-                </div>
-                <div class="service-item">
-                    <h4>E-commerce</h4>
-                </div>
-                <div class="service-item">
-                    <h4>Digital Marketing</h4>
-                </div>
-            </div>
-            
-            <a href="#contact" class="cta-btn">Build Your Website</a>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div class="section-number">04</div>
             <h2 class="section-title">Featured Work</h2>
             
             <div class="portfolio-grid">
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-src="RAFinity-logo.png">
                     <img src="RAFinity-logo.png" alt="RAFinity Logo" class="portfolio-image">
                     <div class="portfolio-content">
                         <div class="portfolio-category">Healthcare Branding</div>
@@ -472,7 +450,7 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-src="wayfinder-logo.png">
                     <img src="wayfinder-logo.png" alt="Wayfinder Logo" class="portfolio-image">
                     <div class="portfolio-content">
                         <div class="portfolio-category">Consulting Brand</div>
@@ -480,15 +458,15 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item">
-                    <img src="LITF-jersey.png" alt="Ladner in the Fire Cycling Jersey" class="portfolio-image">
+                <div class="portfolio-item" data-src="LITF-jersey.jpeg">
+                    <img src="LITF-jersey.jpeg" alt="Ladner in the Fire Cycling Jersey" class="portfolio-image">
                     <div class="portfolio-content">
                         <div class="portfolio-category">Athletic Apparel</div>
                         <h3 class="portfolio-title">Ladner Cycling Jersey</h3>
                     </div>
                 </div>
 
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-src="LITF-logo.png">
                     <img src="LITF-logo.png" alt="Flaming Skull Illustration" class="portfolio-image">
                     <div class="portfolio-content">
                         <div class="portfolio-category">Illustration</div>
@@ -496,15 +474,15 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item">
-                    <img src="ladner-tiedye-shirt.png" alt="Ladner in the Fire Tie-Dye Shirt" class="portfolio-image">
+                <div class="portfolio-item" data-src="LITF-shirt.jpeg">
+                    <img src="LITF-shirt.jpeg" alt="Ladner in the Fire Tie-Dye Shirt" class="portfolio-image">
                     <div class="portfolio-content">
                         <div class="portfolio-category">Event Apparel</div>
                         <h3 class="portfolio-title">Ladner in the Fire</h3>
                     </div>
                 </div>
 
-                <div class="portfolio-item">
+                <div class="portfolio-item" data-src="ACOMACs.png">
                     <img src="ACOMACs.png" alt="A Court of Macs and Cheeses Logo" class="portfolio-image">
                     <div class="portfolio-content">
                         <div class="portfolio-category">Logo Design</div>
@@ -512,11 +490,19 @@
                     </div>
                 </div>
 
-                <div class="portfolio-item">
-                    <img src="Goassamer-logo.png" alt="Gossamer Designs Logo" class="portfolio-image">
+                <div class="portfolio-item" data-src="Gossamer-logo.png">
+                    <img src="Gossamer-logo.png" alt="Gossamer Designs Logo" class="portfolio-image">
                     <div class="portfolio-content">
                         <div class="portfolio-category">Creative Branding</div>
                         <h3 class="portfolio-title">Gossamer Designs</h3>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-src="TM-website.png">
+                    <img src="TM-website.png" alt="Todd Miller Realty Website Design" class="portfolio-image">
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Real Estate Web Design</div>
+                        <h3 class="portfolio-title">Todd Miller Realty Website</h3>
                     </div>
                 </div>
             </div>
@@ -527,7 +513,7 @@
 
     <section class="contact" id="contact">
         <div class="container">
-            <div class="section-number">05</div>
+            <div class="section-number">02</div>
             <h2 class="section-title">Let's Create Something Amazing</h2>
             
             <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
@@ -565,6 +551,14 @@
             </form>
         </div>
     </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+        </div>
+    </div>
 
     <script>
         // Smooth scrolling and interaction effects
@@ -605,6 +599,45 @@
                 tag.addEventListener('mouseleave', function() {
                     this.style.transform = 'translateY(0) scale(1)';
                 });
+            });
+
+            // Lightbox functionality
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxClose = document.querySelector('.lightbox-close');
+
+            // Open lightbox when portfolio item is clicked
+            document.querySelectorAll('.portfolio-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const imageSrc = this.getAttribute('data-src');
+
+                    lightboxImage.src = imageSrc;
+                    
+                    lightbox.classList.add('show');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Close lightbox
+            function closeLightbox() {
+                lightbox.classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+
+            lightboxClose.addEventListener('click', closeLightbox);
+
+            // Close lightbox when clicking outside the image
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // Close lightbox with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && lightbox.classList.contains('show')) {
+                    closeLightbox();
+                }
             });
         });
     </script>
